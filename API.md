@@ -129,3 +129,25 @@ bool provision(const char *appEui, const char *appKey);
 
 - `const char *appEui`: Application Identifier for the device.
 - `const char *appKey`: Application Key assigned to the device.
+
+## Method: encodeSensorData
+Encode the standard message you want to send.
+
+```c
+void encodeSensorData(sensordata_t *data, const byte **buffer, size_t *size);
+```
+
+- `sensordata_t *data`: Structure containing all the message we can send.
+- `const byte **buffer`: Bytes received.
+- `size_t *size`: The number of bytes.
+
+## Method: decodeAppData
+Decode the message you received.
+
+```c
+void decodeAppData(appdata_t *receiveData, const byte *payload, size_t length);
+```
+
+- `appdata_t *receiveData`: Structure containing all the message we received.
+- `const byte *payload`: Bytes received.
+- `size_t length`: The number of bytes.

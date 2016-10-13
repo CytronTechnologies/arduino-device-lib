@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+package api;
+
+message SensorData {
+        optional bool motion = 101;
+        optional uint32 water = 102;
+        optional float temperature_celcius = 103;
+        optional float temperature_fahrenheit = 104;
+        optional float humidity = 105;
+
+        repeated uint32 analog_readings = 110;
+}
