@@ -18,7 +18,8 @@ typedef uint8_t port_t;
 
 enum ttn_fp_t {
   TTN_FP_EU868,
-  TTN_FP_US915
+  TTN_FP_US915,
+  TTN_FP_MY915
 };
 
 typedef struct  airtime_s
@@ -56,6 +57,7 @@ class TheThingsNetwork
     void reset(bool adr = true);
     void configureEU868(uint8_t sf);
     void configureUS915(uint8_t sf, uint8_t fsb);
+    void configureMY915(uint8_t sf);
     void configureChannels(uint8_t sf, uint8_t fsb);
 
   public:

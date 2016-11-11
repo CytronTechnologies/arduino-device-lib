@@ -1,9 +1,10 @@
+#include <SoftwareSerial.h>
 #include <TheThingsNetwork.h>
 
-#define loraSerial Serial1
+SoftwareSerial loraSerial(2, 3);
 #define debugSerial Serial
 
-TheThingsNetwork ttn(loraSerial, debugSerial, /* TTN_FP_EU868 or TTN_FP_US915 */);
+TheThingsNetwork ttn(loraSerial, debugSerial, TTN_FP_MY915);
 
 void setup()
 {

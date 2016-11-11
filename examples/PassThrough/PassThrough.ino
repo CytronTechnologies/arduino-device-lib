@@ -1,3 +1,4 @@
+#include <SoftwareSerial.h>
 /**
  * Use this sketch to talk directly to the LoRa module.
  * 
@@ -8,7 +9,7 @@
  * sys reset
  */
 
-#define loraSerial Serial1
+SoftwareSerial loraSerial(2, 3);
 #define debugSerial Serial
 
 void setup() {

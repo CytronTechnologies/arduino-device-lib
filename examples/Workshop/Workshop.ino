@@ -1,10 +1,5 @@
+#include <SoftwareSerial.h>
 #include <TheThingsNetwork.h>
-
-// Before your start, make sure that in the Tools menu, your Board and your
-// Port is set to Arduino Leonardo
-
-// After you registered your ABP device, go to The Things Network Dashboard
-// and copy the Device Addr, Network Session Key and App Session Key
 
 // Set your Device Address, for example: "1C55B133";
 const char *devAddr = "00000000";
@@ -17,10 +12,10 @@ const char *nwkSKey = "00000000000000000000000000000000";
 // This is used by the network for encryption
 const char *appSKey = "00000000000000000000000000000000";
 
-#define loraSerial Serial1
+SoftwareSerial loraSerial(2, 3);
 #define debugSerial Serial
 
-TheThingsNetwork ttn(loraSerial, debugSerial, /* TTN_FP_EU868 or TTN_FP_US915 */);
+TheThingsNetwork ttn(loraSerial, debugSerial, TTN_FP_MY915);
 
 void setup() {
   // Set up the serial interfaces for the debugging serial monitor and LoRa module
