@@ -477,11 +477,11 @@ void TheThingsNetwork::configureMY915(uint8_t sf){
     str.concat(ch);
     str.concat(F(" on"));
     sendCommand(str);
-    str = "";
+    /*str = "";
     str.concat(F("mac set ch drrange "));
     str.concat(ch);
     str.concat(F(" 0 3"));
-    sendCommand(str);
+    sendCommand(str);*/
   }
   switch (sf) {
     case 7:
